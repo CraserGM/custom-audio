@@ -1,0 +1,349 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+*{margin: 0; padding: 0; font-family: 'Open Sans', 'Courier New'; transition: .5s ease-in-out;}
+
+
+
+.background__1{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image: url(/img/bg/background__1.jpg);
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    z-index: -100;
+}
+.background__deg{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(transparent, #000000c0);
+}
+
+
+
+
+/*------------------------- NavBar -------------------------*/
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    transition: .5s;
+}
+
+.pageLogo{
+    font-family: 'Courier new';
+    color: #fff;
+    font-size: 30px;
+    cursor: default;
+    width: 110px;
+    text-align: center;
+    transition: .5s;
+}
+
+.headerLine{
+    position: absolute;
+    top: 0;
+    transform: translateY(50px);
+    height:2px;
+    width: 120px;
+    background:#fff;
+    transition: .5s;
+}
+.loginIn{
+    position: absolute;
+    right: 40px;
+    background: transparent;
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    transition: .5s;
+    cursor: pointer;
+}
+
+.loginIn:hover{
+    transform: translateY(-2px);
+}
+nav:hover .headerLine{
+    width: 100%;
+    transform: translateY(60px);
+}
+nav:hover .pageLogo, nav:hover .loginIn{
+    margin: 0;
+}
+nav:hover{
+    height: 64px;
+}
+
+
+
+
+/*------------------------- Musics -------------------------*/
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.musics__grid-container{
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, minmax(90px, 90px));
+    row-gap: 10px;
+    color: #fff;
+    margin-top: 80px;
+}
+
+.musics__container{
+    position: relative;
+    min-width: 400px;
+    max-width: 1100px;
+    height: 90px;
+    padding: 10px;
+    margin: 0 40px;
+}
+.music__player-container{
+    display: flex;
+    align-items: center;
+}
+.song__img-container{
+    width: 80px;
+    height: 80px;
+    background-image: url(/img/songs-imgs/Freaks.png);
+    background-position: center;
+    background-size: cover;
+    border-radius: 5px 0 0 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.song__img-title{
+    font-family: Courier;
+    color: #ffffffd0;
+    font-weight: lighter;
+    font-size: .7em;
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+}
+.song__img-title strong{
+    font-weight: bold; 
+    color: #ffffff;
+}
+
+.song__title-container{
+    width: 100px;
+    height: 44px;
+    margin: 0 10px;
+}
+.song__title{
+    color: #fff;
+    font-size: 1em;
+}
+.song__title-autor{
+    color: #ffffffd0;
+    font-size: .9em;
+}
+
+.music__player-controls{
+    display: block;
+    position: relative;
+    width: fit-content;
+    max-width: 600px;
+    min-width: 100px;
+    margin-left: 10px;
+    width: 400px;
+    height: 45px;
+}
+.song__controls-progress{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.progress__bar{
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    position: relative;
+    background-color: #04040438;
+    overflow: hidden;
+}
+.progress{
+    height: 100%;
+    width: 0%;
+    background-color: #fff;
+}
+.song__time-container{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.song__time{
+    font-size: .8em;
+    color: #bbbbbb;
+}
+
+.song__main-controls{
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.song__icons-play, .song__icons-pause{
+    font-size: 2em;
+    color: #fff;
+    cursor: pointer;
+}
+.hide{
+    display: none;
+}
+
+
+audio{position: absolute; visibility: hidden; pointer-events: none;}
+
+
+
+/*------------Login Box----------*/
+.loginInBox{
+    position: absolute;
+    display: flex;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    transition: .5s ease-in-out;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.loginInBox__Active{
+    display: flex;
+    transform: translateY(40px);
+    opacity: 1;
+    pointer-events: visible;
+}
+
+.formBox{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 440px;
+    height: 400px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #fff transparent;
+    backdrop-filter: blur(30px);
+    color: #fff;
+    transition: .5s ease-in-out;
+    background-color: #ffffff0c;
+}
+
+.formBox h2{
+    font-size: 2em;
+    text-align: center;
+}
+.inputBox{
+    position: relative;
+    margin: 30px 0;
+    width: 300px;
+    border-bottom: 2px solid #fff;
+}
+.inputBox label{
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .2s;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 0px 0 5px;
+    background-color: transparent;
+    color: #fff;
+}
+
+input:focus ~ label, input:valid ~ label{
+    top: -10px;
+}
+
+.inputBox ion-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+}
+
+
+.forgetBox{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+}
+
+.forgetBox label{
+    font-size: 1em;
+}
+
+.forgetBox a{
+    color: #fff;
+    font-size: 1em;
+    text-decoration: none;
+}
+.forgetBox a:hover{
+    text-decoration: underline;
+}
+
+
+.formBox button{
+    width: 100%;
+    height: 40px;
+    border: none;
+    background: #fff;
+    border-radius: 100px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.register{
+    position: relative;
+    width: 100%;
+    margin: 20px;
+}
+.register a{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.register a:hover{
+    text-decoration: underline;
+}

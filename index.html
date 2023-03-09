@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Eight Day</title>
+</head>
+<body>
+    <div class="background__1"></div>
+    <div class="background__deg"></div>
+    <nav>
+        <h1 class="pageLogo">Zeoxor</h1>
+        <button class="loginIn" type="button">Login In</button>
+        <div class="headerLine"></div>
+    </nav>
+
+    <section class="loginInBox"> 
+        <div class="formBox">
+            <form action="">
+                <h2>Login</h2>
+                <div class="inputBox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputBox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forgetBox">
+                    <label for=""><input type="checkbox"> Remember me</label>
+                    <a href="#">Forget Password</a>
+                </div>
+                <button>Login In</button>
+                <div class="register">
+                    <p>Don't have a account <a href="#">Register</a></p>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <main>
+        <section class="musics__grid-container">
+            <article class="musics__container">
+                <div class="music__player-container">
+                    <div class="song__img-container">
+                        <h3 class="song__img-title">I Am Just A <strong>Freak</strong></h3>
+                    </div>
+                    <div class="song__title-container">
+                        <h4 class="song__title">Freaks</h4>
+                        <span class="song__title-autor">Surf Curse</span>
+                    </div>
+    
+                    <div class="music__player-controls">
+                        <div class="song__controls-progress">
+                            <div class="progress__bar">
+                                <div class="progress"></div>
+                            </div>
+                            <div class="song__time-container">
+                                <span class="song__time" id="CurrentSongTime"></span>
+                                <span class="song__time" id="SongLength"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <audio src="audio/I-Am-Just-A-Freak.mp3" controls preload="metadata" class="song__n1"></audio>
+                    <div class="song__main-controls">
+                        <ion-icon name="play" class="song__icons-play show" id="PlayPause"></ion-icon>
+                        <ion-icon name="pause" class="song__icons-pause hide" id="PlayPause"></ion-icon>
+                    </div>
+                </div>
+
+                <hr size="1" style="margin: 4px 0 0 0;">
+            </article>
+            
+        </section>
+    </main>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
